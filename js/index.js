@@ -36,8 +36,16 @@ for (let pizza of pizzas){
     pizza.y +=5;
     pizza.dibujar();
 
-    }
-}
+  /* if(score === 10){
+      pizza.y += 7;
+    } else if (score === 20){
+      pizza.y += 10;
+    } else if(score === 23){
+      pizza.y += 10;
+    } else { pizza.y += 15 }
+  }
+}*/
+}}
 
 const detectarColision = () => {
   //console.log(plato.devolverX());
@@ -85,18 +93,14 @@ const detectarColision = () => {
     ctx.fillText("Score: "+score, 8, 20);
 }
 
-//window.addEventListener("load", cargaInicial);
-// Esto de aquí abajo no me funciona cuando comento "load"
-//window.addEventListener("startButton",cargaInicial)
+
 const divMenu = document.getElementById("startingMenu");
 const canvasDiv = document.getElementById("divCanvas");
 const startingButton = document.getElementById("botonMenu");
+
+
 startingButton.addEventListener("click", function(){
   cargaInicial()
   divMenu.classList.add("hidden")
-canvasDiv.classList.remove("hidden")
-})
-
-
-window.addEventListener("keydown", moverPlato);
-//window.addEventListener("keydown", dispararCutter);
+  canvasDiv.classList.remove("hidden")})
+  window.addEventListener("keydown", moverPlato);
