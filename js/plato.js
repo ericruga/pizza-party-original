@@ -15,6 +15,9 @@ class Plato{
     borrar () {
         ctx.clearRect (this.x, this.y, this.ancho, this.alto);
     }
+    devolverX(){
+        return this.x;
+    }
     
 }
 

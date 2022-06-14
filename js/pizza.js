@@ -15,31 +15,27 @@ class Pizza{
     borrar () {
         ctx.clearRect (this.x, this.y, this.ancho, this.alto);
     }
+
+    devolverX(){
+        return this.x;
+    }
+    devolverY(){
+        return this.y;
+    }
     
 }
 
-let pizza = [];
-let pizzas = [];
-
-const crearPizzas = () => {
-    const randomPositionPizzaX = Math.floor(Math.random() * 920);
-    const pizza = new Pizza(
-      randomPositionPizzaX,
-      0,
-      80,
-      80,
-      sliceImage,
-      ctx
-    );
-    pizzas.push(pizza);
-  }
 
 
-const caerPizza = () => {
-for (let pizza of pizzas){
-    pizza.borrar();
-    pizza.y +=5;
-    pizza.dibujar();
-
-    }
-}
+/*const detectarColision = () => {
+    console.log(pizza.y);
+      if (pizza.y === 478) {
+        score ++; 
+        console.log(score);
+      } 
+        if (plato.x < pizza.x && plato.x + plato.ancho > pizza.x) {
+         
+              }
+            }
+      
+    */
