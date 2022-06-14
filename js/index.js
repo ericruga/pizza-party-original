@@ -17,7 +17,7 @@ let pizza = [];
 let pizzas = [];
 
 const crearPizzas = () => {
-    const randomPositionPizzaX = Math.floor(Math.random() * 920);
+    const randomPositionPizzaX = Math.floor(Math.random() * 150);
     const pizza = new Pizza(
       randomPositionPizzaX,
       0,
@@ -41,23 +41,18 @@ for (let pizza of pizzas){
 
 const detectarColision = () => {
   //console.log(plato.devolverX());
-  console.log(score);
+  
   for (let pizza of pizzas){
-    if(440 == pizza.y && pizza.x <= plato.devolverX() + 120){
-      score++;
+    if(480 == pizza.y && pizza.x <= plato.devolverX() + plato.ancho){
+      
+      
+      }
+      //score++;
+    //pizzas.splice(pizza,0)
       //pizzas.splice(pizza,0)
     }
+  }
 
-    }
-  //console.log(plato.devolverX());
-    // if (pizza.y === 478) {
-    //   score ++; 
-    //   console.log(score);
-    // } 
-    //   if (plato.x < pizza.x && plato.x + plato.ancho > pizza.x) {
-       
-    //         }
-          }
     
       
 
