@@ -9,15 +9,12 @@ plateImage.src = '../images/platoremoved.png'
 
 
 const startButton = 0;
-let score = 0;
-let totalScore = [];
-
-
+let score = 32;
 let pizza = [];
 let pizzas = [];
 
 const crearPizzas = () => {
-    const randomPositionPizzaX = Math.floor(Math.random() * 150);
+    const randomPositionPizzaX = Math.floor(Math.random() * 800);
     const pizza = new Pizza(
       randomPositionPizzaX,
       0,
@@ -31,21 +28,46 @@ const crearPizzas = () => {
 
 
 const caerPizza = () => {
-for (let pizza of pizzas){
-    pizza.borrar();
-    pizza.y +=5;
-    pizza.dibujar();
-
-  /* if(score === 10){
-      pizza.y += 7;
-    } else if (score === 20){
-      pizza.y += 10;
-    } else if(score === 23){
-      pizza.y += 10;
-    } else { pizza.y += 15 }
+  for (let pizza of pizzas){
+    if(score >= 0 && score <= 8){
+      //Nivel 1 de dificultad
+      pizza.borrar();
+      pizza.y += 4;
+      pizza.dibujar();
+    } else if (score > 8 && score <= 14){
+      //Nivel 2 de  dificultad
+      pizza.borrar();
+      pizza.y += 6;
+      pizza.dibujar();
+    } else if (score > 14 && score <= 20 ){
+      //Nivel 3 de dificultad
+      pizza.borrar
+      pizza.y += 8;
+      pizza.dibujar();
+    } else if (score > 20  && score <=26){
+      //Nivel 4 de dificultad
+      pizza.borrar();
+      pizza.y += 11;
+      pizza.dibujar();
+    } else if (score > 26 && score <= 32){ 
+      //Nivel  5 de dificultad
+      pizza.borrar();
+      pizza.y += 14;
+      pizza.dibujar();
+     }else if (score > 32 && score <= 37){ 
+      //Nivel  6 de dificultad
+      pizza.borrar();
+      pizza.y += 16;
+      pizza.dibujar();
+     } else {
+      //Nivel supremo de dificultad
+      pizza.borrar();
+      pizza.y += 18;
+      pizza.dibujar();
+     }
   }
-}*/
-}}
+}
+
 
 const detectarColision = () => {
   //console.log(plato.devolverX());
@@ -53,7 +75,7 @@ const detectarColision = () => {
   for (let pizza of pizzas){
     if(480 == pizza.y && pizza.x <= plato.devolverX() + plato.ancho){
       
-      
+      //score++;
       }
       //score++;
     //pizzas.splice(pizza,0)
@@ -69,10 +91,9 @@ const detectarColision = () => {
   const cargaInicial = () => {    
       
     plato.dibujar();
-    //cutter.dibujar();
     setInterval(detectarColision,150);
     setInterval(caerPizza,200);
-    setInterval(crearPizzas, 2500);
+    setInterval(crearPizzas, 3900);
   }
   
   const moverPlato = (e) => {
@@ -97,10 +118,15 @@ const detectarColision = () => {
 const divMenu = document.getElementById("startingMenu");
 const canvasDiv = document.getElementById("divCanvas");
 const startingButton = document.getElementById("botonMenu");
+const restartButton = document.getElementById("botonRestart")
 
 
 startingButton.addEventListener("click", function(){
   cargaInicial()
   divMenu.classList.add("hidden")
-  canvasDiv.classList.remove("hidden")})
+  canvasDiv.classList.remove("hidden")
+})
+restartButton.addEventListener("click",function(){
+  cargaInicial()
+})
   window.addEventListener("keydown", moverPlato);
