@@ -6,8 +6,8 @@ class Pizza{
         this.alto = alto;
         this.imagen = imagen;
         this.ctx = ctx;
-
     }
+    
     dibujar() {
         ctx.drawImage (this.imagen,this.x, this.y, this.ancho, this.alto);
     }
@@ -16,26 +16,31 @@ class Pizza{
         ctx.clearRect (this.x, this.y, this.ancho, this.alto);
     }
 
-    devolverX(){
-        return this.x;
+    detectarColision = (otroObjeto) => {
+    if (otroObjeto.y + otroObjeto.alto < this.y) {
+      return "";
     }
-    devolverY(){
-        return this.y;
+    if (otroObjeto.x + otroObjeto.ancho < this.x) {
+      return "";
     }
-    
+    if (this.y + this.alto < otroObjeto.y) {
+      return "";
+    }
+    if (this.x + this.ancho < otroObjeto.x) {
+      return "";
+    }
+
+    if (otroObjeto.y + otroObjeto.alto === this.y) {
+      return "colision-superior";
+    }
+
+    if (otroObjeto.x + otroObjeto.ancho === this.x) {
+      return "colision-izquierda";
+    }
+
+    if (otroObjeto.x === this.x + this.ancho) {
+      return "colision-derecha";
+    }
+    return "colision";
+  };
 }
-
-
-
-/*const detectarColision = () => {
-    console.log(pizza.y);
-      if (pizza.y === 478) {
-        score ++; 
-        console.log(score);
-      } 
-        if (plato.x < pizza.x && plato.x + plato.ancho > pizza.x) {
-         
-              }
-            }
-      
-    */
