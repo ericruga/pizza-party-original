@@ -85,16 +85,11 @@ const caerPizza = () => {
   )}
       
 
-  const gameOver = () => {
-  
-  }
-
   const cargaInicial = () => {    
     
     tallarin.dibujar();
     plato.dibujar();
-    gameOver();
-    //setInterval(detectarColision(),150);
+    
     setInterval(caerPizza,200);
     setInterval(crearPizzas, 3900);
   }
@@ -125,7 +120,7 @@ const caerPizza = () => {
 const divMenu = document.getElementById("startingMenu");
 const canvasDiv = document.getElementById("divCanvas");
 const startButton = document.getElementById("botonMenu");
-const restartButton = document.getElementById("botonRestart")
+//const restartButton = document.getElementById("botonRestart")
 
 
 startButton.addEventListener("click", function(){
@@ -133,7 +128,7 @@ startButton.addEventListener("click", function(){
   divMenu.classList.add("hidden")
   canvasDiv.classList.remove("hidden")
 })
-restartButton.addEventListener("click",function(){
-  cargaInicial()
-})
+// restartButton.addEventListener("click",function(){
+//   divMenu.classList.add("hidden")
+// })
   window.addEventListener("keydown", moverPlato);
