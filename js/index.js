@@ -2,9 +2,9 @@ const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
 let sliceImage = new Image();
-sliceImage.src = './../images/sliceofpizza.png';
+sliceImage.src = './images/pizzanobackground.png';
 let plateImage = new Image();
-plateImage.src = './../images/platoremoved.png'
+plateImage.src = './images/platoremoved.png'
 
 
 
