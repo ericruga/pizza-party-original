@@ -71,11 +71,12 @@ const caerPizza = () => {
             pizza.borrar();
             pizzas.splice(i,1);  
             score++;
-            drawScore();
+            
             }  
           if (pizza.detectarColision(tallarin)){
             pizza.borrar();
             pizzas.splice(i,3);
+            
             alert("GAME OVER");
             document.location.reload();
            
@@ -89,7 +90,7 @@ const caerPizza = () => {
     
     tallarin.dibujar();
     plato.dibujar();
-    
+    drawScore();
     setInterval(caerPizza,200);
     setInterval(crearPizzas, 3900);
   }
@@ -112,8 +113,8 @@ const caerPizza = () => {
 
   function drawScore() {
     ctx.font = "45px Cambria";
-    ctx.fillStyle = "#0095DD";
-    ctx.fillText(`Your score is:${score}`, 15, 590);
+    ctx.fillStyle = "#828282";
+    ctx.fillText(`${score} slices!`, 15, 590);
 }
 
 
