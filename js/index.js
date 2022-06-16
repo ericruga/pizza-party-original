@@ -16,7 +16,8 @@ let tallarinImage = new Image();
 tallarinImage.src = './images/tallarin2.png'
 
 // Declaración de variables
-let score = 16;
+let score = 0;
+let scoreAcumulado = 0;
 let pizzas = [];
 
 //const plato = new Plato (440,540,120,60,plateImage, ctx);
@@ -115,6 +116,7 @@ function gameOver (){
   ending.classList.remove("hidden")
   canvasDiv.classList.add("hidden")
   scoreFinal.innerText = score;
+  scoreAcumulado = score;
 }
 
 // Creación de la función que nos carga el juego
