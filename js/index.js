@@ -13,7 +13,7 @@ sliceImage.src = './images/pizzanobackground.png';
 let plateImage = new Image();
 plateImage.src = './images/platoremoved.png'
 let tallarinImage = new Image();
-tallarinImage.src = './../images/tallarin.png'
+tallarinImage.src = './images/tallarin.png'
 
 // Declaración de variables
 let score = 16;
