@@ -14,15 +14,17 @@
   <body>
       <div id="divCanvas" class="hidden">
           <canvas id="myCanvas" width="880px" height="620px"></canvas>
+          <button id="botonMenuRest" class="restartButton">TRY AGAIN!</button>
       </div>
       <div id="startScreen">
           <img id="mainPic" src="./images/wakemepizza.gif" alt="Funny pizza"> 
           <button id="botonMenuInit" class="startButton">START TO EAT!</button>
-      </div>   
-      <div id="gameOverScreen" class="screen">
-          <h2>GAME OVER</h2>
-          <button id="botonMenuRest" class="startButton">TRY AGAIN!</button>
-     </div>
+      </div>
+
+      <div id="gameOver" class="hidden">
+        <h3> HAS PERDIDO!</h3><span>0</span>
+        <button id="botonRest" class="restartButton">TRY AGAIN!</button>
+    </div>
     <script src="./js/index.js"></script>
     <script src="./js/pizza.js"></script>
     <script src="./js/plato.js"></script>
