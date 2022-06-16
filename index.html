@@ -14,7 +14,6 @@
   <body>
       <div id="divCanvas" class="hidden">
           <canvas id="myCanvas" width="880px" height="620px"></canvas>
-          <button id="botonMenuRest" class="restartButton">TRY AGAIN!</button>
       </div>
       <div id="startScreen">
           <img id="mainPic" src="./images/wakemepizza.gif" alt="Funny pizza"> 
@@ -22,7 +21,8 @@
       </div>
 
       <div id="gameOver" class="hidden">
-        <h3> HAS PERDIDO!</h3><span>0</span>
+        <h2> YOU LOST!</h2>
+        <h3>You've been able to eat only...<span id="printearScore">0</span> slices. Too bad! </h3>
         <button id="botonRest" class="restartButton">TRY AGAIN!</button>
     </div>
     <script src="./js/index.js"></script>
