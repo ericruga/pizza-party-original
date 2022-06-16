@@ -1,6 +1,6 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
-const divMenu = document.getElementById("startingMenu");
+const divMenu = document.getElementById("startScreen");
 const canvasDiv = document.getElementById("divCanvas");
 const startButton = document.getElementById("botonMenuInit");
 
@@ -13,7 +13,7 @@ let tallarinImage = new Image();
 tallarinImage.src = '../images/tallarin.png'
 
 // Declaración de variables
-let score = 0;
+let score = 7;
 let pizzas = [];
 
 // Creación del objeto pizza usando Math.random
@@ -93,23 +93,25 @@ const caerPizza = () => {
     plato.borrar();
     if (e.key === "ArrowLeft") {
       if (plato.x > 5) {
-        plato.x = plato.x -15;
+        plato.x = plato.x -25;
       }
     }
     if (e.key === "ArrowRight") {
       if (plato.x < 755) {
-        plato.x = plato.x +15;
+        plato.x = plato.x +25;
       }
     }  
     plato.dibujar();
+    
   };
 
 // Creación de la función que nos suma la puntuación
-  function drawScore() {
+  /*function drawScore() {
+    ctx.clearRect (840, 590, 45,45);
     ctx.font = "45px Cambria";
     ctx.fillStyle = "#828282";
-    ctx.fillText(`${score}`, 860, 590);
-}
+    ctx.fillText(`${score}`, 840, 590);
+}*/
 
 // Creación de la función que nos carga el juego
 // Creamos una nueva pizza cada 4s y chequeamos la situación del juego cada 0,5s
@@ -121,7 +123,6 @@ const caerPizza = () => {
     setInterval(crearPizzas, 3900);
     plato.dibujar();
     tallarin.dibujar();
-    drawScore();
 
   }
 
