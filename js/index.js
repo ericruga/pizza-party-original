@@ -51,7 +51,7 @@ const caerPizza = () => {
           if(score >= 0 && score <= 8){
             // Nivel 1 de dificultad
             pizza.borrar();
-            pizza.y += 12;
+            pizza.y += 14;
             pizza.dibujar();
           } else if (score > 8 && score <= 14){
             // Nivel 2 de  dificultad
@@ -61,22 +61,22 @@ const caerPizza = () => {
           } else if (score > 14 && score <= 20 ){
             // Nivel 3 de dificultad
             pizza.borrar();
-            pizza.y += 22;
+            pizza.y += 24;
             pizza.dibujar();
           } else if (score > 20  && score <=26){
             // Nivel 4 de dificultad
             pizza.borrar();
-            pizza.y += 24;
+            pizza.y += 27;
             pizza.dibujar();
           } else if (score > 26 && score <= 32){ 
             // Nivel  5 de dificultad
             pizza.borrar();
-            pizza.y += 27;
+            pizza.y += 32;
             pizza.dibujar();
            } else {
             // Nivel supremo de dificultad
             pizza.borrar();
-            pizza.y += 30;
+            pizza.y += 38;
             pizza.dibujar();
            }
            if (pizza.detectarColision(plato)){
