@@ -23,7 +23,6 @@ let pizzas = [];
 //const plato = new Plato (440,540,120,60,plateImage, ctx);
 //const tallarin = new Tallarin (0,599,canvas.width,10,tallarinImage, ctx);
 
-
 // Creación del objeto pizza usando Math.random
 // Metiendo cada pizza dentro del array de pizzas
 const crearPizzas = () => {
@@ -66,7 +65,7 @@ const caerPizza = () => {
           } else if (score > 20  && score <=26){
             // Nivel 4 de dificultad
             pizza.borrar();
-            pizza.y += 27;
+            pizza.y += 28;
             pizza.dibujar();
           } else if (score > 26 && score <= 32){ 
             // Nivel  5 de dificultad
@@ -76,7 +75,7 @@ const caerPizza = () => {
            } else {
             // Nivel supremo de dificultad
             pizza.borrar();
-            pizza.y += 38;
+            pizza.y += 36;
             pizza.dibujar();
            }
            if (pizza.detectarColision(plato)){
@@ -94,7 +93,7 @@ const caerPizza = () => {
       }
   )}
       
-// Creación del movimiento del plato a izquierda y derecha, quedando delimitado dentro del canvas
+// Creación del movimiento del plato a izquierda y derecha, delimitado dentro del canvas
   const moverPlato = (e) => {
     plato.borrar();
     if (e.key === "ArrowLeft") {
@@ -130,14 +129,7 @@ function gameOver (){
     plato.dibujar();
     tallarin.dibujar();
 
-  }
-
-  
-  //function limpiarCanvas() {
-      //ctx.clearRect(0, 0, 880, 620);
- 
-   
-  
+  } 
 
 // Añadimos los listeners de mouse y teclado
 // Cuando hacemos click en el botón de start, añadimos el
